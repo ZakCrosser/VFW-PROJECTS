@@ -24,23 +24,27 @@
 		<fieldset>
 			<legend>Transaction Info</legend>
 				<ul>
-					<li><strong>Date Added:</strong></li>
-						
+					<li><strong>Date Added:</strong>
+						<ul>
 						<li><label for="date"></label><input type="date" id="date" /></li>
-					
-						<li><strong>Type:</strong></li>
-						
+						</ul>
+					</li>
+					<li><strong>Type:</strong>
+						<ul>
 						<li>Deposit<input type="radio" checked value="Deposit" id="Deposit" name="type" /></li>
 						<li>Withdraw<input type="radio" value="Withdraw" id="Withdraw" name="type" /></li>
 						<li>Adjustment<input type="radio" value="Adjustment" id="Adjustment" name="type" /></li>
 						<li>Transfer<input type="radio" value="Transfer" id="Transfer" name="type" /></li>
-					
-					<li><strong>How Much Did You Spend</strong></li>
-					
+						</ul>
+					</li>
+					<li><strong>How Much Did You Spend</strong>
+						<ul>
 						<li>Amount<input type="text" id="amount" placeholder="$0.00"></li>
-						
+						</ul>
+					</li>	
 					<li>
 						<label for="Catagory">Category</label>
+						
 						<select id="Catagoty">
 							<option value="Food">Food</option>
 							<option value="Credit Card">Credit Card</option>
@@ -49,7 +53,7 @@
 						</select>	
 					</li>
 					<li><input id="slider" type="range" min="0" max="100" step="10" /></li>
-					<li>Recurring Transaction? <input type="checkbox" value="Yes" id="recurring" /><label for="recuring" id="recurring">Yes</label></li>		
+					<li>Recurring Transaction? <input type="checkbox" value="Yes" id="recurring" /><label for="recuring">Yes</label></li>		
 					<li><label for="notes">Notes:</label><textarea id="notes"></textarea></li>		
 					<li><input type="hidden" value="true"> </li>
 				</ul>
