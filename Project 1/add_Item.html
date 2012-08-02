@@ -25,20 +25,20 @@
 			<legend>Transaction Info</legend>
 				<ul>
 					<li><strong>Date Added:</strong></li>
-					<ul>	
+						
 						<li><label for="date"></label><input type="date" id="date" /></li>
-					</ul>
+					
 						<li><strong>Type:</strong></li>
-					<ul>	
+						
 						<li>Deposit<input type="radio" checked value="Deposit" id="Deposit" name="type" /></li>
 						<li>Withdraw<input type="radio" value="Withdraw" id="Withdraw" name="type" /></li>
 						<li>Adjustment<input type="radio" value="Adjustment" id="Adjustment" name="type" /></li>
 						<li>Transfer<input type="radio" value="Transfer" id="Transfer" name="type" /></li>
-					</ul>
+					
 					<li><strong>How Much Did You Spend</strong></li>
-					<ul>
+					
 						<li>Amount<input type="text" id="amount" placeholder="$0.00"></li>
-					</ul>	
+						
 					<li>
 						<label for="Catagory">Category</label>
 						<select id="Catagoty">
@@ -49,10 +49,11 @@
 						</select>	
 					</li>
 					<li><input id="slider" type="range" min="0" max="100" step="10" /></li>
-					<li><input type="checkbox" value="Recurring" id="recurring" /><label for="recuring">Recurring</label></li>		
+					<li>Recurring Transaction? <input type="checkbox" value="Yes" id="recurring" /><label for="recuring" id="recurring">Yes</label></li>		
 					<li><label for="notes">Notes:</label><textarea id="notes"></textarea></li>		
 					<li><input type="hidden" value="true"> </li>
 				</ul>
+				<input type="submit" value="Add Transaction" />
 		</fieldset>
 	<a href="#">Clear Stored Data</a>	
 	<a href="#">Display Stored Data</a>	
