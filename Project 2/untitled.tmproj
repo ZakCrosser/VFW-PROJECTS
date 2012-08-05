@@ -33,16 +33,16 @@
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>22</integer>
+			<integer>21</integer>
 		</dict>
 		<key>css/styles.css</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>23</integer>
+				<integer>9</integer>
 				<key>line</key>
-				<integer>20</integer>
+				<integer>70</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -88,6 +88,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{-0, 4}, {783, 874}}</string>
+	<string>{{446, 4}, {783, 874}}</string>
 </dict>
 </plist>
