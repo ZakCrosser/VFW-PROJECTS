@@ -77,6 +77,9 @@ window.addEventListener("DOMContentLoaded", function(){
   
   function showData(){
     controls("on");
+    if(localStorage.length === 0){
+        alert("There Are No Transactions Saved!")
+    }
     var makeDiv = document.createElement("div");
     makeDiv.setAttribute("id", "data");
     var makeList = document.createElement('ul');
@@ -99,6 +102,17 @@ window.addEventListener("DOMContentLoaded", function(){
       }
     }
   }
+  
+  function clearData(){
+    if(localStorage.length === 0){
+      alert("There Are No Transactions Saved!")
+    }else{
+      localStorage.clear();
+      alert("All Transactions Have Been Deleted!");
+      window.location.reload();
+      return false;
+    }
+  }
     
   var catagory = ["--Choose a Catagory--", "Food", "Credit Card", "Entertainment", "ATM Withdraw"],
       typeValue,sss
@@ -108,7 +122,7 @@ window.addEventListener("DOMContentLoaded", function(){
   
 
   document.getElementById('showInfo').onclick = (function(evt) {showData(evt);});
-  //document.getElementById('clearData').onclick = (function(evt) {clearData(evt);});
+  document.getElementById('clearData').onclick = (function(evt) {clearData(evt);});
   document.getElementById('submit').onclick = (function(evt) {storeTransaction(evt);});
   
   
