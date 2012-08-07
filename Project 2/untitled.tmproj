@@ -26,23 +26,38 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>25</integer>
+				<integer>50</integer>
 				<key>line</key>
-				<integer>56</integer>
+				<integer>58</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>27</integer>
+			<integer>28</integer>
+		</dict>
+		<key>js/main.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>4</integer>
+				<key>line</key>
+				<integer>81</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>95</integer>
 		</dict>
 	</dict>
 	<key>openDocuments</key>
 	<array>
 		<string>add_Item.html</string>
+		<string>js/main.js</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<false/>
 	<key>windowFrame</key>
-	<string>{{543, 79}, {880, 669}}</string>
+	<string>{{496, 26}, {699, 669}}</string>
 </dict>
 </plist>
