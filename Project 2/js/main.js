@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", function(){
     var item            = {};
         item.date       =["Date", $('date').value];
         item.transType  =["Type", typeValue];
-        
+        item.catagory   =["Catagory", $('groups').value]
         item.amount     =["Amount", $('amount').value];
         item.slider     =["Slider", $('slider').value];
         item.checkBox   =["Is it a reccuring transaction:", checkBoxValue];
