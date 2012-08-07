@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", function(){
     var item            = {};
         item.date       =["Date", $('date').value];
         item.transType  =["Type", typeValue];
-        item.catagory   =["Catagory", $('groups').value]
+        item.catagory   =["Catagory", $('groups').value];
         item.amount     =["Amount", $('amount').value];
         item.slider     =["Slider", $('slider').value];
         item.checkBox   =["Is it a reccuring transaction:", checkBoxValue];
@@ -57,12 +57,12 @@ window.addEventListener("DOMContentLoaded", function(){
   }
   
   function showData(){
-    var makeDiv = document.createElement('div');
-    makeDiv.setAttribute("id", "items");
+    var makeDiv = document.createElement("div");
+    makeDiv.setAttribute("id", "data");
     var makeList = document.createElement('ul');
     makeDiv.appendChild(makeList);
     document.body.appendChild(makeDiv);
-    for(var i=0, leg=localStorage.length; i>leg; i++){
+    for(var i=0, len=localStorage.length; i<len; i++){
       var makeLi = document.createElement('li');
       makeList.appendChild(makeLi);
       var key = localStorage.key(i);
@@ -70,21 +70,23 @@ window.addEventListener("DOMContentLoaded", function(){
       var obj = JSON.parse(value);
       var makeSubList = document.createElement('ul');
       makeLi.appendChild(makeSubList);
-      for(var s in obj){
+      for(var n in obj){
         var makeSubLi = document.createElement('li');
         makeSubList.appendChild(makeSubLi);
-        var optSubText = obj [s] [0]+" "+obj [s] [1];
+        var optSubText = obj[n][0]+" "+obj[n][1];
         makeSubLi.innerHTML = optSubText;
       }
     }
   }
     
   var catagory = ["--Choose a Catagory--", "Food", "Credit Card", "Entertainment", "ATM Withdraw"],
-      typeValue,
+      typeValue,sss
       checkBoxValue = "No"
       ;
   makeDropMenu();
   
+  //var displayData = $('showInfo');
+  //displayData.addEventListener("click", showData);
   document.getElementById('showInfo').onclick = (function(evt) {showData(evt);});
   //document.getElementById('clearData').onclick = (function(evt) {clearData(evt);});
   document.getElementById('submit').onclick = (function(evt) {storeTransaction(evt);});
