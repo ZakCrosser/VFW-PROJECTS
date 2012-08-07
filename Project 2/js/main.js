@@ -40,6 +40,25 @@ window.addEventListener("DOMContentLoaded", function(){
     }
   }
   
+  function controls(n){
+    switch(n){
+      case "on":
+        $('form').style.display = "none";
+        $('clearData').style.display ="inline";
+        $('showInfo').style.display ="none";
+        $('addNew').style.display ="inline";
+        break;
+      case "off":
+        $('form').style.display = "block";
+        $('clearData').style.display ="inline";
+        $('showInfo').style.display ="inline";
+        $('addNew').style.display ="none";
+        $("data").style.display ="none";
+      default:
+        return false;
+    }
+  }
+  
   function storeTransaction(){
     var id              = Math.floor(Math.random()*100001);
     getRadioType();
@@ -57,11 +76,13 @@ window.addEventListener("DOMContentLoaded", function(){
   }
   
   function showData(){
+    controls("on");
     var makeDiv = document.createElement("div");
     makeDiv.setAttribute("id", "data");
     var makeList = document.createElement('ul');
     makeDiv.appendChild(makeList);
     document.body.appendChild(makeDiv);
+    $("data").style.display ="block"
     for(var i=0, len=localStorage.length; i<len; i++){
       var makeLi = document.createElement('li');
       makeList.appendChild(makeLi);
@@ -70,10 +91,10 @@ window.addEventListener("DOMContentLoaded", function(){
       var obj = JSON.parse(value);
       var makeSubList = document.createElement('ul');
       makeLi.appendChild(makeSubList);
-      for(var n in obj){
+      for(var s in obj){
         var makeSubLi = document.createElement('li');
         makeSubList.appendChild(makeSubLi);
-        var optSubText = obj[n][0]+" "+obj[n][1];
+        var optSubText = obj[s][0]+" "+obj[s][1];
         makeSubLi.innerHTML = optSubText;
       }
     }
@@ -85,8 +106,7 @@ window.addEventListener("DOMContentLoaded", function(){
       ;
   makeDropMenu();
   
-  //var displayData = $('showInfo');
-  //displayData.addEventListener("click", showData);
+
   document.getElementById('showInfo').onclick = (function(evt) {showData(evt);});
   //document.getElementById('clearData').onclick = (function(evt) {clearData(evt);});
   document.getElementById('submit').onclick = (function(evt) {storeTransaction(evt);});
