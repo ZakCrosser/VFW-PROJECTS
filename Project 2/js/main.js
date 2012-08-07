@@ -1,7 +1,6 @@
 //Project 2
 //VFW Term 1208
 //Zachary Crosser
-
 window.addEventListener("DOMContentLoaded", function(){
   
   function $(x){
@@ -48,7 +47,7 @@ window.addEventListener("DOMContentLoaded", function(){
     var item            = {};
         item.date       =["Date", $('date').value];
         item.transType  =["Type", typeValue];
-        item.catagory   =["Catagory", $('catagory').value];
+        
         item.amount     =["Amount", $('amount').value];
         item.slider     =["Slider", $('slider').value];
         item.checkBox   =["Is it a reccuring transaction:", checkBoxValue];
@@ -74,7 +73,7 @@ window.addEventListener("DOMContentLoaded", function(){
       for(var s in obj){
         var makeSubLi = document.createElement('li');
         makeSubList.appendChild(makeSubLi);
-        var optSubText = obj[s][0]+" "+obj[s][1];
+        var optSubText = obj [s] [0]+" "+obj [s] [1];
         makeSubLi.innerHTML = optSubText;
       }
     }
@@ -86,13 +85,9 @@ window.addEventListener("DOMContentLoaded", function(){
       ;
   makeDropMenu();
   
-  var displayLink = $('displayData');
-  displayLink.addEventListener("click", showData);
-/*  var clearLink = $("clear");
-  clearLink.addEventListener("click", clearData);
-  */
-  var addInfo = $('submit');
-  addInfo.addEventListener("click", storeTransaction);
+  document.getElementById('showInfo').onclick = (function(evt) {showData(evt);});
+  //document.getElementById('clearData').onclick = (function(evt) {clearData(evt);});
+  document.getElementById('submit').onclick = (function(evt) {storeTransaction(evt);});
   
   
   
