@@ -36,10 +36,49 @@ p{
   color: #0B0B61;
 }
 
-fieldset {
+fieldset, #storedTransactions {
   border-color: #0B0B61; 
   background-color: #BDBDBD;
   
+}
+
+#storedTransactions {
+  padding: 5px;
+}
+
+#storedTransactions ul {
+  padding: 5px;
+}
+
+#storedTransactions li.transaction ul {
+  padding-top: 30px;
+}
+
+#storedTransactions li.transaction li {
+  padding-bottom: 5px;
+}
+
+#storedTransactions li.transaction {
+  padding-bottom: 15px;
+  border-bottom: 2px solid #0B0B61;
+  padding-left: 260px;
+}
+
+#storedTransactions li.transaction:last-child {
+  border-bottom: none;
+}
+
+#errors {
+  padding: 0;
+}
+
+.errors {
+  border: 1px solid red;
+}
+
+#errors li{
+  padding: 5px;
+  color: red;
 }
 
 legend {
@@ -49,11 +88,21 @@ legend {
 
 ul {
   background-color: #E6E6E6;
+  list-style: none;
+}
+
+ul li ul {
+  background-color: transparent;
+}
+
+fieldset ul{
+  padding: 5px;
 }
 
 li{
   color: #0B0B61; 
   font-family: Helvetica, Arial, sans-serif;  
+  list-style: none;
 }
 
 
@@ -76,3 +125,34 @@ input[type="submit"] {
   border-color: #0B0B61; 
   border-style:solid;
 }
+
+.Food{
+  background-image: url(../img/Food.png);
+  background-repeat: no-repeat;
+}
+
+.Credit_Card{
+  background-image: url(../img/Credit_Card.png);
+  background-repeat: no-repeat;
+}
+
+.Entertainment{
+  background-image: url(../img/Entertainment.png);
+  background-repeat: no-repeat;
+}
+
+.ATM_Withdraw{
+  background-image: url(../img/ATM_Withdraw.png);
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -83,11 +83,14 @@ window.addEventListener("DOMContentLoaded", function(){
   var showData = function(){
     controls("on");
     if(localStorage.length === 0){
-      return;
+      alert("There is no data in Local Storage, static data function added!")
+     autoFillData();
+     showData();
     } else {
       var makeDiv = document.createElement("div");
       makeDiv.setAttribute("id", "data");
       var makeList = $('storedTransactions');
+      makeList.innerHTML = "";
       makeDiv.appendChild(makeList);
       document.body.appendChild(makeDiv);
       $("data").style.display ="block"
@@ -100,6 +103,7 @@ window.addEventListener("DOMContentLoaded", function(){
         var obj = JSON.parse(value);
         var makeSubList = document.createElement('ul');
         makeLi.appendChild(makeSubList);
+        makeLi.setAttribute('class', 'transaction ' + obj.catagory[1]);
         for(var s in obj){
           var makeSubLi = document.createElement('li');
           makeSubList.appendChild(makeSubLi);
@@ -110,6 +114,13 @@ window.addEventListener("DOMContentLoaded", function(){
         makeItemLinks(localStorage.key(i), linksLi);
       }
     }
+  }
+  
+  var autoFillData = function (){
+    for(var j in json){
+      var id = Math.floor(Math.random()*100001);
+      localStorage.setItem(id, JSON.stringify(json[j]));
+    }  
   }
   
   var makeItemLinks = function(key, linksLi){
@@ -192,31 +203,33 @@ window.addEventListener("DOMContentLoaded", function(){
     var getNotes     =$('notes');
     
     errMsg.innerHTML = "";
-    getCatagory.style.border = "1px solid black";
-    getDate.style.border = "1px solid black";
-    getAmount.style.border = "1px solid black";
-    getNotes.style.border = "1px solid black";
+    getCatagory.setAttribute("class", "");
+    getDate.setAttribute("class", "");
+    getAmount.setAttribute("class", "");
+    getNotes.setAttribute("class", "");
+    
+  
     
     var messageAry = [];
     
     if(getCatagory.value === "--Choose a Catagory--"){
       var catagoryError = "Please Pick a Catagory";
-      getCatagory.style.border = "1px solid red";
+      getCatagory.setAttribute("class", "errors");
       messageAry.push(catagoryError); 
     }
     if(getDate.value === ""){
       var dateError = "Please Enter A Date";
-      getDate.style.border = "1px solid red";
+      getDate.setAttribute("class", "errors");
       messageAry.push(dateError);
     }
-    if(getAmount.value === ""){
+    if(!(new RegExp("^[0-9\.]+$", "i")).test(getAmount.value)){
       var amountError = "Please Enter A Amount";
-      getAmount.style.border = "1px solid red";
+      getAmount.setAttribute("class", "errors");
       messageAry.push(amountError);
     }
     if(getNotes.value === ""){
       var notesError = "Please Enter Notes";
-      getNotes.style.border = "1px solid red";
+      getNotes.setAttribute("class", "errors");
       messageAry.push(notesError);
     }
     if(messageAry.length >= 1){
@@ -234,7 +247,7 @@ window.addEventListener("DOMContentLoaded", function(){
  
  
     
-  var catagory = ["--Choose a Catagory--", "Food", "Credit Card", "Entertainment", "ATM Withdraw"],
+  var catagory = ["--Choose a Catagory--", "Food", "Credit_Card", "Entertainment", "ATM_Withdraw"],
       typeValue,sss
       checkBoxValue = "No"
       errMsg = $('errors');
